@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping("api/clientes")
 public class PersonaController {
     @Autowired
     PersonaRepository personaRepository;
@@ -21,4 +21,5 @@ public class PersonaController {
     public ResponseEntity getClienteById(@PathVariable int id){
         return new ResponseEntity(personaRepository.findById(id), HttpStatus.OK);
     }
+
 }
