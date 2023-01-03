@@ -1,5 +1,7 @@
-package ed.example.oc.jwtDemo.security;
+package ed.example.oc.jwtDemo.config;
 
+import ed.example.oc.jwtDemo.security.JWTAuthenticationFilter;
+import ed.example.oc.jwtDemo.security.JWTAuthorizationFilter;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,7 +33,7 @@ public class WebSecurityConfig {
                 .and()
                 .csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/clientes").permitAll()
+                //.requestMatchers("/api/clientes").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic()
